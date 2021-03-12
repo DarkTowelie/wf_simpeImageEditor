@@ -1,0 +1,12 @@
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\WfApplication.csprojAssemblyReference.cache
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\WfApplication.csproj.GenerateResource.cache
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\WfApplication.csproj.CoreCompileInputs.cache
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\WfApplication.F_MainForm.resources
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\WfApplication.F_Image.resources
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\WfApplication.F_CreateNewBitmap.resources
+C:\Users\valer\source\repos\WfApplication\WfApplication\bin\Debug\SimpleImageEditor.exe.config
+C:\Users\valer\source\repos\WfApplication\WfApplication\bin\Debug\SimpleImageEditor.exe
+C:\Users\valer\source\repos\WfApplication\WfApplication\bin\Debug\SimpleImageEditor.pdb
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\SimpleImageEditor.Properties.Resources.resources
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\SimpleImageEditor.exe
+C:\Users\valer\source\repos\WfApplication\WfApplication\obj\Debug\SimpleImageEditor.pdb
