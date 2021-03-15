@@ -45,46 +45,50 @@ namespace WfApplication
 
         public Point ConvertCoordinates(PictureBox pic, int x, int y)
         {
-            int picHgt = pic.ClientSize.Height;
-            int picWid = pic.ClientSize.Width;
-            int imgHgt = pic.Image.Height;
-            int imgWid = pic.Image.Width;
-
             Point res = new Point(x, y);
 
-            switch (pic.SizeMode)
+            if (pic != null && pic.Image != null)
             {
-                case PictureBoxSizeMode.Zoom:
-                    float picAspect = picWid / (float)picHgt;
-                    float imgAspect = imgWid / (float)imgHgt;
-                    if (picAspect > imgAspect)
-                    {
-                        res.Y = (int)(imgHgt * y / (float)picHgt);
-                        float scaled_width = imgWid * picHgt / imgHgt;
-                        float dx = (picWid - scaled_width) / 2;
-                        res.X = (int)((x - dx) * imgHgt / (float)picHgt);
-                    }
-                    else
-                    {
-                        res.X = (int)(imgWid * x / (float)picWid);
-                        float scaled_height = imgHgt * picWid / imgWid;
-                        float dy = (picHgt - scaled_height) / 2;
-                        res.Y = (int)((y - dy) * imgWid / picWid);
-                    }
-                    break;
+                int picHgt = pic.ClientSize.Height;
+                int picWid = pic.ClientSize.Width;
+                int imgHgt = pic.Image.Height;
+                int imgWid = pic.Image.Width;    
+
+                switch (pic.SizeMode)
+                {
+                    case PictureBoxSizeMode.Zoom:
+                        float picAspect = picWid / (float)picHgt;
+                        float imgAspect = imgWid / (float)imgHgt;
+                        if (picAspect > imgAspect)
+                        {
+                            res.Y = (int)(imgHgt * y / (float)picHgt);
+                            float scaled_width = imgWid * picHgt / imgHgt;
+                            float dx = (picWid - scaled_width) / 2;
+                            res.X = (int)((x - dx) * imgHgt / (float)picHgt);
+                        }
+                        else
+                        {
+                            res.X = (int)(imgWid * x / (float)picWid);
+                            float scaled_height = imgHgt * picWid / imgWid;
+                            float dy = (picHgt - scaled_height) / 2;
+                            res.Y = (int)((y - dy) * imgWid / picWid);
+                        }
+                        break;
+                }
+
+                if (res.X < 0)
+                    res.X = 0;
+
+                if (res.Y < 0)
+                    res.Y = 0;
+
+                if (res.X >= image.Width)
+                    res.X = image.Width - 1;
+
+                if (res.Y >= image.Height)
+                    res.Y = image.Height - 1;
             }
-
-            if (res.X < 0)
-                res.X = 0;
-
-            if (res.Y < 0)
-                res.Y = 0;
-
-            if (res.X >= image.Width)
-                res.X = image.Width - 1;
-
-            if (res.Y >= image.Height)
-                res.Y = image.Height - 1;
+            
 
             return res;
         }
